@@ -397,6 +397,7 @@
 /include/mgmt/osdp.h                      @cbsiddharth
 /include/net/                             @jukkar @tbursztyka @pfalcon
 /include/net/buf.h                        @jukkar @jhedberg @tbursztyka @pfalcon
+/include/net/lorawan.h                    @Mani-Sadhasivam
 /include/posix/                           @pfalcon
 /include/power/power.h                    @wentongwu @nashif @ceolin
 /include/ptp_clock.h                      @jukkar
@@ -431,6 +432,7 @@
 /samples/drivers/ht16k33/                 @henrikbrixandersen
 /samples/drivers/lora/                    @Mani-Sadhasivam
 /samples/drivers/counter/maxim_ds3231/    @pabigot
+/samples/lorawan/                         @Mani-Sadhasivam
 /samples/net/                             @jukkar @tbursztyka @pfalcon
 /samples/net/dns_resolve/                 @jukkar @tbursztyka @pfalcon
 /samples/net/lwm2m_client/                @rlubos
@@ -503,12 +505,18 @@
 /subsys/fs/nvs/                           @Laczen
 /subsys/logging/                          @nordic-krch
 /subsys/logging/log_backend_net.c         @nordic-krch @jukkar
+<<<<<<< HEAD
 /subsys/mgmt/ec_host_cmd/                 @jettr
 /subsys/mgmt/mcumgr/                      @carlescufi @nvlsianpu
 /subsys/mgmt/hawkbit/                     @Navin-Sankar
 /subsys/mgmt/mcumgr/smp_udp.c             @aunsbjerg
 /subsys/mgmt/updatehub/                   @nandojve @otavio
 /subsys/mgmt/osdp/                        @cbsiddharth
+=======
+/subsys/lorawan/                          @Mani-Sadhasivam
+/subsys/mgmt/                             @carlescufi @nvlsianpu
+/subsys/mgmt/smp_udp.c                    @aunsbjerg
+>>>>>>> CODEOWNERS: Add entry for LoRaWAN
 /subsys/net/buf.c                         @jukkar @jhedberg @tbursztyka @pfalcon
 /subsys/net/ip/                           @jukkar @tbursztyka @pfalcon
 /subsys/net/lib/                          @jukkar @tbursztyka @pfalcon
