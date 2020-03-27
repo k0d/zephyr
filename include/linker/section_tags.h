@@ -32,6 +32,10 @@
 #define __imx_boot_dcd_section	Z_GENERIC_SECTION(IMX_BOOT_DCD)
 #endif /* CONFIG_ARM */
 
+#ifdef CONFIG_SDRAM
+#define __sdram_section	Z_GENERIC_SECTION(_SDRAM_SECTION_NAME)
+#endif
+
 #if defined(CONFIG_NOCACHE_MEMORY)
 #define __nocache __in_section_unique(_NOCACHE_SECTION_NAME)
 #endif /* CONFIG_NOCACHE_MEMORY */

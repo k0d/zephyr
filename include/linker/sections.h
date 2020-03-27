@@ -67,6 +67,10 @@
 #define IMX_BOOT_IVT	.boot_hdr.ivt
 #define IMX_BOOT_DCD	.boot_hdr.dcd_data
 
+#ifdef CONFIG_SDRAM
+#define _SDRAM_SECTION_NAME	.sdram
+#endif
+
 #ifdef CONFIG_NOCACHE_MEMORY
 #define _NOCACHE_SECTION_NAME nocache
 #endif

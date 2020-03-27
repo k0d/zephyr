@@ -429,6 +429,21 @@ GROUP_END(DTCM)
 #include <custom-sections.ld>
 #endif
 
+#ifdef CONFIG_SDRAM
+GROUP_START(SDRAM)
+
+	SECTION_PROLOGUE(_SDRAM_SECTION_NAME,(NOLOAD),SUBALIGN(4))
+	{
+		__sdram_start = .;
+		*(.sdram)
+		*(".sdram.*")
+	} GROUP_LINK_IN(SDRAM)
+
+	__sdram_end = .;
+
+GROUP_END(SDRAM)
+#endif
+
 /* Located in generated directory. This file is populated by the
  * zephyr_linker_sources() Cmake function.
  */

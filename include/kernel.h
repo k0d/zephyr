@@ -4522,6 +4522,15 @@ struct k_mem_pool {
  */
 
 /**
+ * @brief Store the memory pool in the sdram linker section
+ */
+#ifdef CONFIG_HEAP_MEM_POOL_IN_SDRAM
+#define MEMPOOL_SECTION __attribute__ ((section(".sdram")))
+#else
+#define MEMPOOL_SECTION
+#endif
+
+/**
  * @brief Statically define and initialize a memory pool.
  *
  * The memory pool's buffer contains @a n_max blocks that are @a max_size bytes
@@ -4543,7 +4552,7 @@ struct k_mem_pool {
  */
 #define K_MEM_POOL_DEFINE(name, minsz, maxsz, nmax, align)		\
 	char __aligned(WB_UP(align)) _mpool_buf_##name[WB_UP(maxsz) * nmax \
-				  + _MPOOL_BITS_SIZE(maxsz, minsz, nmax)]; \
+		  + _MPOOL_BITS_SIZE(maxsz, minsz, nmax)] MEMPOOL_SECTION; \
 	struct sys_mem_pool_lvl _mpool_lvls_##name[Z_MPOOL_LVLS(maxsz, minsz)]; \
 	Z_STRUCT_SECTION_ITERABLE(k_mem_pool, name) = { \
 		.base = {						\

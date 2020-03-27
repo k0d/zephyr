@@ -492,6 +492,13 @@ config HEAP_MEM_POOL_MIN_SIZE
 	  This option specifies the size of the smallest block in the pool.
 	  Option must be a power of 2 and lower than or equal to the size
 	  of the entire pool.
+
+config HEAP_MEM_POOL_IN_SDRAM
+	bool "Locate the heap mempool in the SDRAM section"
+	select SDRAM
+	help
+	  This enables the storage of the heap mempool in the SDRAM section
+
 endmenu
 
 config ARCH_HAS_CUSTOM_SWAP_TO_MAIN
