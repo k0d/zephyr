@@ -1,0 +1,20 @@
+# Copyright (c) 2019 Manivannan Sadhasivam
+# Copyright (c) 2020 Andreas Sandberg
+# SPDX-License-Identifier: Apache-2.0
+
+include: spi-device.yaml
+
+description: RisingHf LRWAN_GS_HF1 LoRa Concentrator
+
+compatible: "risinghf,lrwan_gs_hf1"
+
+properties:
+    reset-gpios:
+      type: phandle-array
+      required: true
+      description: |
+        GPIO connected to the concentrator's NRST signal.
+
+        This signal is open-drain, active-low as interpreted by the
+        concentrator.
+

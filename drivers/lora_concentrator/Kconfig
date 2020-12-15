@@ -1,0 +1,35 @@
+#
+# Copyright (c) 2020 Mark Olsson <mark@markolsson.se>
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Top-level configuration file for LoRa Concentrator drivers.
+
+menuconfig LORA_CONCENTRATOR
+	bool "LoRa concentrator support [EXPERIMENTAL]"
+	select REQUIRES_FULL_LIBC
+	help
+	  Include LoRa concentrator drivers in the system configuration.
+
+if LORA_CONCENTRATOR
+
+module = LORA_CONCENTRATOR
+module-str = lora_concentrator
+source "subsys/logging/Kconfig.template.log_config"
+
+config LORA_CONCENTRATOR_INIT_PRIORITY
+	int "LoRa concentrator initialization priority"
+	default 90
+	help
+	  System initialization priority for LoRa concentrator drivers.
+
+DT_COMPAT_RISINGHF_LRWANGSHF1 := risinghf,lrwan_gs_hf1
+
+menuconfig LORA_CONCENTRATOR_LRWAN_GS_HF1
+	bool "RisingHf LRWAN_GS_HF1 driver"
+	depends on SPI
+	help
+	  Enable LoRa driver for RisingHf LRWAN_GS_HF1.
+
+endif # LORA_CONCENTRATOR
